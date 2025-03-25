@@ -122,7 +122,7 @@ export default function WheelchairControl() {
         )}
 
         {/* Status display */}
-        <div className="text-center mb-8">
+        <div className="text-center mb-8 py-5">
           <p className="text-lg font-medium bg-gray-800 inline-block px-4 py-2 rounded-full">
             Status:{" "}
             <span className="text-blue-400">{status || "Waiting..."}</span>
@@ -345,45 +345,6 @@ export default function WheelchairControl() {
           </div>
 
           {/* Wheelchair orientation visualization */}
-          <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-4 rounded-xl shadow-xl mb-8">
-            <h3 className="text-lg font-medium mb-3 text-center text-blue-400">
-              Wheelchair Orientation
-            </h3>
-            <div className="relative h-40 flex items-center justify-center">
-              {/* Simple wheelchair visualization */}
-              <div className="relative w-24 h-32">
-                {/* Wheelchair base */}
-                <div className="absolute bottom-0 left-0 right-0 h-16 bg-blue-600 rounded-md"></div>
-
-                {/* Wheelchair seat */}
-                <div className="absolute bottom-16 left-2 right-2 h-10 bg-blue-500 rounded-t-md"></div>
-
-                {/* Wheelchair back */}
-                <div className="absolute bottom-26 left-2 right-2 h-14 bg-blue-400 rounded-t-sm"></div>
-
-                {/* Wheels */}
-                <div className="absolute bottom-2 left-[-8px] w-6 h-12 bg-gray-700 rounded-l-full border-2 border-gray-600"></div>
-                <div className="absolute bottom-2 right-[-8px] w-6 h-12 bg-gray-700 rounded-r-full border-2 border-gray-600"></div>
-
-                {/* Direction indicator */}
-                <div className="absolute top-[-10px] left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-b-16 border-l-transparent border-r-transparent border-b-green-500"></div>
-              </div>
-
-              {/* Compass directions */}
-              <div className="absolute top-2 left-1/2 transform -translate-x-1/2 text-xs text-gray-400">
-                N
-              </div>
-              <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 text-xs text-gray-400">
-                S
-              </div>
-              <div className="absolute left-2 top-1/2 transform -translate-y-1/2 text-xs text-gray-400">
-                W
-              </div>
-              <div className="absolute right-2 top-1/2 transform -translate-y-1/2 text-xs text-gray-400">
-                E
-              </div>
-            </div>
-          </div>
         </div>
       </div>
 
