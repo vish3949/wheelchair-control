@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Github, MousePointer, Bluetooth } from "lucide-react";
+import { Github, MousePointer, Bluetooth, Wifi } from "lucide-react";
 
 export default function HomePage() {
   return (
@@ -35,8 +35,9 @@ export default function HomePage() {
         </header>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-          <div className="space-y-6">
-            <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300">
+          {/* First column */}
+          <div className="space-y-6 flex flex-col">
+            <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 flex-1">
               <h2 className="text-2xl font-semibold mb-4 text-blue-400">
                 Project Overview
               </h2>
@@ -53,7 +54,7 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300">
+            <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 flex-1">
               <h2 className="text-2xl font-semibold mb-4 text-blue-400">
                 Control Methods
               </h2>
@@ -83,12 +84,26 @@ export default function HomePage() {
                     </p>
                   </div>
                 </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="bg-blue-600 p-2 rounded-lg">
+                    <Wifi className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <h3 className="font-medium text-lg">WiFi Web Control</h3>
+                    <p className="text-gray-300">
+                      Browser-based interface accessible from any device
+                      connected to the same network.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-          <div className="space-y-6">
-            <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300">
+          {/* Second column */}
+          <div className="space-y-6 flex flex-col">
+            <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 flex-1">
               <h2 className="text-2xl font-semibold mb-4 text-blue-400">
                 Project Details
               </h2>
@@ -118,7 +133,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300">
+            <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 flex-1">
               <h2 className="text-2xl font-semibold mb-4 text-blue-400">
                 Technical Implementation
               </h2>
