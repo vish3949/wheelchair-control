@@ -23,7 +23,7 @@ export default function WheelchairControl() {
   const [showInfo, setShowInfo] = useState(false);
   const [gestureEnabled, setGestureEnabled] = useState(true);
   const [showWarning, setShowWarning] = useState(true);
-  const [batteryLevel, setBatteryLevel] = useState(75);
+  const [batteryLevel, setBatteryLevel] = useState(0);
   const [speed, setSpeed] = useState(50);
   const [connectionStrength, setConnectionStrength] = useState(4);
   const [mode, setMode] = useState("indoor");
@@ -210,98 +210,7 @@ export default function WheelchairControl() {
         {/* Additional controls and status indicators */}
         <div className="mt-8 max-w-md mx-auto">
           {/* Status indicators */}
-          <div className="grid grid-cols-3 gap-4 mb-6">
-            {/* Battery status */}
-            <div className="bg-gray-800 p-3 rounded-xl flex flex-col items-center">
-              <div className="flex items-center justify-center mb-1">
-                <Battery className="h-5 w-5 text-green-400" />
-                <span className="ml-2 text-sm font-medium">
-                  {batteryLevel}%
-                </span>
-              </div>
-              <div className="w-full bg-gray-700 rounded-full h-2.5">
-                <div
-                  className={`h-2.5 rounded-full ${
-                    batteryLevel > 60
-                      ? "bg-green-500"
-                      : batteryLevel > 30
-                      ? "bg-yellow-500"
-                      : "bg-red-500"
-                  }`}
-                  style={{ width: `${batteryLevel}%` }}
-                ></div>
-              </div>
-            </div>
-
-            {/* Connection strength */}
-            <div className="bg-gray-800 p-3 rounded-xl flex flex-col items-center">
-              <div className="flex items-center justify-center mb-1">
-                <Wifi className="h-5 w-5 text-blue-400" />
-                <span className="ml-2 text-sm font-medium">Signal</span>
-              </div>
-              <div className="flex items-center justify-center gap-1">
-                {[1, 2, 3, 4, 5].map((bar) => (
-                  <div
-                    key={bar}
-                    className={`w-1.5 rounded-t-sm ${
-                      bar <= connectionStrength ? "bg-blue-500" : "bg-gray-600"
-                    }`}
-                    style={{ height: `${bar * 3 + 5}px` }}
-                  ></div>
-                ))}
-              </div>
-            </div>
-
-            {/* Mode selector */}
-            <div className="bg-gray-800 p-3 rounded-xl flex flex-col items-center">
-              <span className="text-sm font-medium mb-1">Mode</span>
-              <div className="flex bg-gray-700 rounded-full p-1 w-full">
-                <button
-                  className={`text-xs rounded-full py-1 flex-1 transition-colors ${
-                    mode === "indoor"
-                      ? "bg-blue-600 text-white"
-                      : "text-gray-300"
-                  }`}
-                  onClick={() => setMode("indoor")}
-                >
-                  Indoor
-                </button>
-                <button
-                  className={`text-xs rounded-full py-1 flex-1 transition-colors ${
-                    mode === "outdoor"
-                      ? "bg-blue-600 text-white"
-                      : "text-gray-300"
-                  }`}
-                  onClick={() => setMode("outdoor")}
-                >
-                  Outdoor
-                </button>
-              </div>
-            </div>
-          </div>
-
-          {/* Speed control */}
-          <div className="bg-gray-800 p-4 rounded-xl mb-6">
-            <div className="flex items-center justify-between mb-2">
-              <span className="text-sm font-medium">Speed Control</span>
-              <div className="flex items-center">
-                <Gauge className="h-4 w-4 text-blue-400 mr-1" />
-                <span className="text-sm font-medium">{speed}%</span>
-              </div>
-            </div>
-            <input
-              type="range"
-              min="0"
-              max="100"
-              value={speed}
-              onChange={(e) => setSpeed(Number.parseInt(e.target.value))}
-              className="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-blue-500"
-            />
-            <div className="flex justify-between text-xs text-gray-400 mt-1">
-              <span>Slow</span>
-              <span>Fast</span>
-            </div>
-          </div>
+          <div className="grid grid-cols-3 gap-4 mb-6"></div>
 
           {/* Project info section */}
           <div className="mb-6">
