@@ -47,7 +47,7 @@ export default function WheelchairControl() {
         return;
       }
 
-      const response = await axios.get(`http://192.168.4.34/${command}`);
+      const response = await axios.get(`http://{ESP-32 IP ADDRESS}/${command}`);
       setStatus(response.data.status);
 
       if (command === "gesture_off") {
