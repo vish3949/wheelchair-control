@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Smart Wheelchair Control System
 
-## Getting Started
+This project is a hybrid hardware-software solution that enables control of a wheelchair using an interactive web interface built with Next.js and a ESP32 microcontroller programmed with Arduino. It's aimed at enhancing accessibility and independence for people with mobility challenges.
 
-First, run the development server:
+## 🧠 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- ✋ **Gesture Control**: Detects hand gestures to control wheelchair movement for intuitive navigation.
+- 🌐 **Web App Control**: A user-friendly interface built with Next.js allows remote control through a web browser.
+- 🔵 **Bluetooth Connectivity**: Sends commands to the wheelchair hardware via Bluetooth for real-time execution.
+
+## 📁 Project Structure
+
+```
+├── wheelchair.ino              # Arduino sketch for controlling wheelchair hardware
+├── public/                     # SVG icons and static assets
+├── src/app/                    # App layout, styles, and favicon
+│   ├── favicon.ico             # Favicon used by the web application
+│   ├── globals.css             # Global CSS styles for the web interface
+│   └── page.tsx                # Main page rendering the control interface
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Getting Started
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Prerequisites
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Node.js & npm
+- Arduino IDE
 
-## Learn More
+### Installation (Frontend)
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+git clone https://github.com/vish3949/wheelchair-control.git
+cd wheelchair-control
+npm install
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Then open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Arduino Setup
 
-## Deploy on Vercel
+1. Open `wheelchair.ino` in the Arduino IDE.
+2. Select the correct board (ESP32) and port.
+3. Upload the sketch to the microcontroller.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🤝 Contributing
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Feel free to fork this repo and suggest improvements via pull requests!
+
+## 📜 License
+
+This project is licensed under the MIT License.
+
+---
+
+Made with ❤️ to help improve accessibility through tech.
